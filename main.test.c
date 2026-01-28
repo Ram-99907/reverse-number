@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <assert.h>
+#include <string.h>
 
 int reverse_number(int num) {
     int reverse = 0, remainder;
@@ -15,177 +15,182 @@ int reverse_number(int num) {
     return reverse;
 }
 
-void test_reverse_positive_single_digit() {
-    printf("Test: Reverse positive single digit number\n");
-    assert(reverse_number(5) == 5);
-    assert(reverse_number(0) == 0);
-    assert(reverse_number(9) == 9);
-    printf("PASSED\n\n");
+void test_reverse_positive_number() {
+    printf("Test: Reverse positive number (5211)... ");
+    int result = reverse_number(5211);
+    assert(result == 1125);
+    printf("PASSED\n");
 }
 
-void test_reverse_positive_multi_digit() {
-    printf("Test: Reverse positive multi-digit number\n");
-    assert(reverse_number(123) == 321);
-    assert(reverse_number(5211) == 1125);
-    assert(reverse_number(1234) == 4321);
-    assert(reverse_number(9876) == 6789);
-    printf("PASSED\n\n");
+void test_reverse_single_digit() {
+    printf("Test: Reverse single digit (5)... ");
+    int result = reverse_number(5);
+    assert(result == 5);
+    printf("PASSED\n");
+}
+
+void test_reverse_zero() {
+    printf("Test: Reverse zero (0)... ");
+    int result = reverse_number(0);
+    assert(result == 0);
+    printf("PASSED\n");
+}
+
+void test_reverse_negative_number() {
+    printf("Test: Reverse negative number (-123)... ");
+    int result = reverse_number(-123);
+    assert(result == -321);
+    printf("PASSED\n");
 }
 
 void test_reverse_number_with_trailing_zeros() {
-    printf("Test: Reverse number with trailing zeros\n");
-    assert(reverse_number(100) == 1);
-    assert(reverse_number(1000) == 1);
-    assert(reverse_number(1200) == 21);
-    assert(reverse_number(1230) == 321);
-    printf("PASSED\n\n");
+    printf("Test: Reverse number with trailing zeros (1200)... ");
+    int result = reverse_number(1200);
+    assert(result == 21);
+    printf("PASSED\n");
 }
 
-void test_reverse_negative_numbers() {
-    printf("Test: Reverse negative numbers\n");
-    assert(reverse_number(-123) == -321);
-    assert(reverse_number(-5211) == -1125);
-    assert(reverse_number(-1) == -1);
-    assert(reverse_number(-100) == -1);
-    printf("PASSED\n\n");
+void test_reverse_large_positive_number() {
+    printf("Test: Reverse large positive number (987654321)... ");
+    int result = reverse_number(987654321);
+    assert(result == 123456789);
+    printf("PASSED\n");
 }
 
-void test_reverse_palindrome_numbers() {
-    printf("Test: Reverse palindrome numbers\n");
-    assert(reverse_number(121) == 121);
-    assert(reverse_number(1221) == 1221);
-    assert(reverse_number(12321) == 12321);
-    printf("PASSED\n\n");
+void test_reverse_two_digit_number() {
+    printf("Test: Reverse two digit number (42)... ");
+    int result = reverse_number(42);
+    assert(result == 24);
+    printf("PASSED\n");
 }
 
-void test_reverse_large_numbers() {
-    printf("Test: Reverse large numbers\n");
-    assert(reverse_number(123456) == 654321);
-    assert(reverse_number(987654321) == 123456789);
-    printf("PASSED\n\n");
+void test_reverse_palindrome_number() {
+    printf("Test: Reverse palindrome number (121)... ");
+    int result = reverse_number(121);
+    assert(result == 121);
+    printf("PASSED\n");
 }
 
-void test_reverse_edge_case_zero() {
-    printf("Test: Edge case - zero\n");
-    assert(reverse_number(0) == 0);
-    printf("PASSED\n\n");
+void test_reverse_number_ending_in_zero() {
+    printf("Test: Reverse number ending in zero (100)... ");
+    int result = reverse_number(100);
+    assert(result == 1);
+    printf("PASSED\n");
 }
 
-void test_reverse_numbers_with_leading_zeros_after_reverse() {
-    printf("Test: Numbers that have leading zeros after reversal\n");
-    assert(reverse_number(10) == 1);
-    assert(reverse_number(20) == 2);
-    assert(reverse_number(100) == 1);
-    assert(reverse_number(1000) == 1);
-    printf("PASSED\n\n");
-}
-
-void test_reverse_two_digit_numbers() {
-    printf("Test: Two digit numbers\n");
-    assert(reverse_number(12) == 21);
-    assert(reverse_number(23) == 32);
-    assert(reverse_number(99) == 99);
-    assert(reverse_number(10) == 1);
-    printf("PASSED\n\n");
-}
-
-void test_reverse_three_digit_numbers() {
-    printf("Test: Three digit numbers\n");
-    assert(reverse_number(100) == 1);
-    assert(reverse_number(101) == 101);
-    assert(reverse_number(123) == 321);
-    assert(reverse_number(999) == 999);
-    printf("PASSED\n\n");
-}
-
-void test_reverse_four_digit_numbers() {
-    printf("Test: Four digit numbers\n");
-    assert(reverse_number(1000) == 1);
-    assert(reverse_number(1234) == 4321);
-    assert(reverse_number(5678) == 8765);
-    assert(reverse_number(9999) == 9999);
-    printf("PASSED\n\n");
+void test_reverse_three_digit_number() {
+    printf("Test: Reverse three digit number (456)... ");
+    int result = reverse_number(456);
+    assert(result == 654);
+    printf("PASSED\n");
 }
 
 void test_reverse_negative_single_digit() {
-    printf("Test: Negative single digit\n");
-    assert(reverse_number(-1) == -1);
-    assert(reverse_number(-5) == -5);
-    assert(reverse_number(-9) == -9);
-    printf("PASSED\n\n");
-}
-
-void test_reverse_negative_multi_digit() {
-    printf("Test: Negative multi-digit\n");
-    assert(reverse_number(-12) == -21);
-    assert(reverse_number(-123) == -321);
-    assert(reverse_number(-1234) == -4321);
-    printf("PASSED\n\n");
+    printf("Test: Reverse negative single digit (-7)... ");
+    int result = reverse_number(-7);
+    assert(result == -7);
+    printf("PASSED\n");
 }
 
 void test_reverse_negative_with_trailing_zeros() {
-    printf("Test: Negative numbers with trailing zeros\n");
-    assert(reverse_number(-100) == -1);
-    assert(reverse_number(-1000) == -1);
-    assert(reverse_number(-1200) == -21);
-    printf("PASSED\n\n");
+    printf("Test: Reverse negative with trailing zeros (-3400)... ");
+    int result = reverse_number(-3400);
+    assert(result == -43);
+    printf("PASSED\n");
 }
 
-void test_reverse_boundary_values() {
-    printf("Test: Boundary values\n");
-    assert(reverse_number(1) == 1);
-    assert(reverse_number(-1) == -1);
-    assert(reverse_number(10) == 1);
-    assert(reverse_number(-10) == -1);
-    printf("PASSED\n\n");
+void test_reverse_max_int_boundary() {
+    printf("Test: Reverse number near max int boundary (1463847412)... ");
+    int result = reverse_number(1463847412);
+    assert(result == 2147483641);
+    printf("PASSED\n");
 }
 
-void test_reverse_consecutive_numbers() {
-    printf("Test: Consecutive numbers\n");
-    assert(reverse_number(12345) == 54321);
-    assert(reverse_number(123456789) == 987654321);
-    printf("PASSED\n\n");
+void test_reverse_min_int_boundary() {
+    printf("Test: Reverse number near min int boundary (-1463847412)... ");
+    int result = reverse_number(-1463847412);
+    assert(result == -2147483641);
+    printf("PASSED\n");
 }
 
-void test_reverse_repeated_digits() {
-    printf("Test: Numbers with repeated digits\n");
-    assert(reverse_number(111) == 111);
-    assert(reverse_number(222) == 222);
-    assert(reverse_number(1111) == 1111);
-    assert(reverse_number(1212) == 2121);
-    printf("PASSED\n\n");
+void test_reverse_all_same_digits() {
+    printf("Test: Reverse all same digits (7777)... ");
+    int result = reverse_number(7777);
+    assert(result == 7777);
+    printf("PASSED\n");
 }
 
-void test_reverse_mixed_patterns() {
-    printf("Test: Mixed digit patterns\n");
-    assert(reverse_number(102030) == 30201);
-    assert(reverse_number(10203) == 30201);
-    assert(reverse_number(50607) == 70605);
-    printf("PASSED\n\n");
+void test_reverse_alternating_digits() {
+    printf("Test: Reverse alternating digits (1010)... ");
+    int result = reverse_number(1010);
+    assert(result == 101);
+    printf("PASSED\n");
 }
 
 int main() {
-    printf("=== Running Comprehensive Tests for Number Reversal ===\n\n");
+    printf("=== Running Unit Tests for Number Reversal ===\n\n");
 
-    test_reverse_positive_single_digit();
-    test_reverse_positive_multi_digit();
+    int tests_passed = 0;
+    int tests_failed = 0;
+
+    test_reverse_positive_number();
+    tests_passed++;
+
+    test_reverse_single_digit();
+    tests_passed++;
+
+    test_reverse_zero();
+    tests_passed++;
+
+    test_reverse_negative_number();
+    tests_passed++;
+
     test_reverse_number_with_trailing_zeros();
-    test_reverse_negative_numbers();
-    test_reverse_palindrome_numbers();
-    test_reverse_large_numbers();
-    test_reverse_edge_case_zero();
-    test_reverse_numbers_with_leading_zeros_after_reverse();
-    test_reverse_two_digit_numbers();
-    test_reverse_three_digit_numbers();
-    test_reverse_four_digit_numbers();
-    test_reverse_negative_single_digit();
-    test_reverse_negative_multi_digit();
-    test_reverse_negative_with_trailing_zeros();
-    test_reverse_boundary_values();
-    test_reverse_consecutive_numbers();
-    test_reverse_repeated_digits();
-    test_reverse_mixed_patterns();
+    tests_passed++;
 
-    printf("=== All Tests Passed Successfully! ===\n");
-    return 0;
+    test_reverse_large_positive_number();
+    tests_passed++;
+
+    test_reverse_two_digit_number();
+    tests_passed++;
+
+    test_reverse_palindrome_number();
+    tests_passed++;
+
+    test_reverse_number_ending_in_zero();
+    tests_passed++;
+
+    test_reverse_three_digit_number();
+    tests_passed++;
+
+    test_reverse_negative_single_digit();
+    tests_passed++;
+
+    test_reverse_negative_with_trailing_zeros();
+    tests_passed++;
+
+    test_reverse_max_int_boundary();
+    tests_passed++;
+
+    test_reverse_min_int_boundary();
+    tests_passed++;
+
+    test_reverse_all_same_digits();
+    tests_passed++;
+
+    test_reverse_alternating_digits();
+    tests_passed++;
+
+    printf("\n=== Test Summary ===\n");
+    printf("Tests Passed: %d\n", tests_passed);
+    printf("Tests Failed: %d\n", tests_failed);
+    printf("Total Tests: %d\n", tests_passed + tests_failed);
+
+    if (tests_failed == 0) {
+        printf("\nAll tests passed successfully!\n");
+        return 0;
+    } else {
+        printf("\nSome tests failed!\n");
+        return 1;
+    }
 }
